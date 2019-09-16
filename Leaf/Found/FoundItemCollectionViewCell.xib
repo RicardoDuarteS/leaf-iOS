@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FoundItemCollectionViewCell" id="gTV-IL-0wX" customClass="FoundItemCollectionViewCell" customModule="Leaf" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2N-SI-FdG">
+                        <rect key="frame" x="16" y="0.0" width="382" height="145"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9u-aS-Fsm">
+                                <rect key="frame" x="8" y="8" width="366" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KA8-vx-2nq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Description" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-6D-pnH">
+                                <rect key="frame" x="8" y="56" width="366" height="81"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="k9u-aS-Fsm" firstAttribute="leading" secondItem="b2N-SI-FdG" secondAttribute="leading" constant="8" id="1c1-yL-8QD"/>
+                            <constraint firstItem="k9u-aS-Fsm" firstAttribute="top" secondItem="b2N-SI-FdG" secondAttribute="top" constant="8" id="Ip6-MG-Toh"/>
+                            <constraint firstAttribute="trailing" secondItem="k9u-aS-Fsm" secondAttribute="trailing" constant="8" id="WPv-Ro-ug7"/>
+                            <constraint firstItem="vPg-6D-pnH" firstAttribute="leading" secondItem="b2N-SI-FdG" secondAttribute="leading" constant="8" id="cfs-Kd-Vax"/>
+                            <constraint firstAttribute="trailing" secondItem="vPg-6D-pnH" secondAttribute="trailing" constant="8" id="d94-VQ-WuC"/>
+                            <constraint firstAttribute="bottom" secondItem="vPg-6D-pnH" secondAttribute="bottom" constant="8" id="j8T-rD-j9w"/>
+                            <constraint firstItem="vPg-6D-pnH" firstAttribute="top" secondItem="k9u-aS-Fsm" secondAttribute="bottom" constant="8" id="joq-ZI-MOS"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="b2N-SI-FdG" secondAttribute="trailing" constant="16" id="BUW-tp-C24"/>
+                <constraint firstItem="b2N-SI-FdG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Pb2-Y8-ZrM"/>
+                <constraint firstItem="b2N-SI-FdG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="cSZ-p7-gDP"/>
+                <constraint firstAttribute="bottom" secondItem="b2N-SI-FdG" secondAttribute="bottom" constant="4" id="dMm-BG-mbk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="414" height="149"/>
+            <connections>
+                <outlet property="lblItemTitle" destination="k9u-aS-Fsm" id="s7g-Uk-jDi"/>
+                <outlet property="txvItemDescription" destination="vPg-6D-pnH" id="pjn-aA-k9S"/>
+            </connections>
+            <point key="canvasLocation" x="401.44927536231887" y="144.30803571428569"/>
+        </collectionViewCell>
+    </objects>
+</document>
