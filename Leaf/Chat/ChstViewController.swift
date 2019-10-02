@@ -15,9 +15,12 @@ class ChatViewController: UIViewController {
     
     @IBOutlet weak var btnSendMessage: UIButton!
     
+    var userName: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Messenger"
+        self.title = "\(self.userName ?? "Username")"
+        print(self.userName)
         self.tabBarController?.tabBar.isHidden = true
         // Do any additional setup after loading the view.
     }

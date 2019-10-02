@@ -108,7 +108,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -143,12 +143,49 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             cell.notificationSwitch.isHidden = false
             //do the swift stuff
             return cell
+        }else if indexPath.row == 4{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as? ProfileTableViewCell  else {return UITableViewCell()}
+            cell.lblCellName.text = "My List"
+            cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+            return cell
+        }else if indexPath.row == 5{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as? ProfileTableViewCell  else {return UITableViewCell()}
+            cell.lblCellName.text = "Feedback"
+            cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+            
+            return cell
         }else{
+                
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as? ProfileTableViewCell  else {return UITableViewCell()}
             cell.lblCellName.text = "Logout"
+            cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+            
+            
+            
+            
             return cell
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 4 { //Go to My List
+            performSegue(withIdentifier: "toUserListSegue", sender: self)
+        }else if indexPath.row == 5{ //Go to feedback ViewController
+            performSegue(withIdentifier: "sendFeedbackSegue", sender: self)
+        }else if indexPath.row == 6{ //Logout
+            
+            let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "no", style: .cancel, handler: { (action) in
+                print("Logout canceled")
+            }))
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+                self.dismiss(animated: true, completion: nil)
+                //logout from the server
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LostItemTableViewCell" rowHeight="120" id="KGk-i7-Jjw" customClass="FoundItemTableViewCell" customModule="Leaf" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KxA-gm-YjV">
+                        <rect key="frame" x="0.0" y="0.0" width="105" height="120"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="105" id="gAj-y6-vnf"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rh-mH-QBq">
+                        <rect key="frame" x="109" y="8" width="2" height="104"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="2" id="MxL-zV-qxu"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUs-he-lKt">
+                        <rect key="frame" x="119" y="8" width="193" height="104"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jR2-RV-cOs">
+                                <rect key="frame" x="8" y="8" width="177" height="18.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDx-Nn-cwP">
+                                <rect key="frame" x="0.0" y="34.5" width="193" height="69.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jR2-RV-cOs" firstAttribute="top" secondItem="EUs-he-lKt" secondAttribute="top" constant="8" id="00W-9x-00h"/>
+                            <constraint firstAttribute="bottom" secondItem="aDx-Nn-cwP" secondAttribute="bottom" id="3of-6N-Yjr"/>
+                            <constraint firstAttribute="trailing" secondItem="aDx-Nn-cwP" secondAttribute="trailing" id="Fco-1I-48w"/>
+                            <constraint firstAttribute="trailing" secondItem="jR2-RV-cOs" secondAttribute="trailing" constant="8" id="LkF-gu-SYZ"/>
+                            <constraint firstItem="jR2-RV-cOs" firstAttribute="leading" secondItem="EUs-he-lKt" secondAttribute="leading" constant="8" id="cii-zN-yPk"/>
+                            <constraint firstItem="aDx-Nn-cwP" firstAttribute="top" secondItem="jR2-RV-cOs" secondAttribute="bottom" constant="8" id="o6E-Uy-Fla"/>
+                            <constraint firstItem="aDx-Nn-cwP" firstAttribute="leading" secondItem="EUs-he-lKt" secondAttribute="leading" id="quP-0F-QRW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="KxA-gm-YjV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KID-iw-MjX"/>
+                    <constraint firstAttribute="bottom" secondItem="9rh-mH-QBq" secondAttribute="bottom" constant="8" id="TVS-bl-gfQ"/>
+                    <constraint firstItem="EUs-he-lKt" firstAttribute="leading" secondItem="9rh-mH-QBq" secondAttribute="trailing" constant="8" id="YPB-LQ-nIJ"/>
+                    <constraint firstItem="KxA-gm-YjV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ZP0-md-cix"/>
+                    <constraint firstItem="9rh-mH-QBq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ZZE-Re-RMt"/>
+                    <constraint firstItem="EUs-he-lKt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Zom-sP-hII"/>
+                    <constraint firstAttribute="bottom" secondItem="KxA-gm-YjV" secondAttribute="bottom" id="lqS-Gb-Jwl"/>
+                    <constraint firstAttribute="trailing" secondItem="EUs-he-lKt" secondAttribute="trailing" constant="8" id="nZh-LD-qAY"/>
+                    <constraint firstItem="9rh-mH-QBq" firstAttribute="leading" secondItem="KxA-gm-YjV" secondAttribute="trailing" constant="4" id="wPR-Zf-o6X"/>
+                    <constraint firstAttribute="bottom" secondItem="EUs-he-lKt" secondAttribute="bottom" constant="8" id="wTD-ff-yBh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgItem" destination="KxA-gm-YjV" id="xkF-Jg-3Vz"/>
+                <outlet property="lblTitle" destination="jR2-RV-cOs" id="HDi-4D-haM"/>
+                <outlet property="txfDescription" destination="aDx-Nn-cwP" id="sdn-M9-sGy"/>
+            </connections>
+            <point key="canvasLocation" x="100.00000000000001" y="97.098214285714278"/>
+        </tableViewCell>
+    </objects>
+</document>

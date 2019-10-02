@@ -8,11 +8,12 @@
 
 import UIKit
 
-class MyListCollectionViewCell: UICollectionViewCell {
+class LostItemsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imgItemPhoto: UIImageView!
     @IBOutlet weak var lblItemName: UILabel!
     @IBOutlet weak var lblLocation: UILabel!
+    @IBOutlet weak var lblReward: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

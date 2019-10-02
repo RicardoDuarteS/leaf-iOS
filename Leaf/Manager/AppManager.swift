@@ -13,6 +13,21 @@ class AppManager {
     
     var myPickerData = [String](arrayLiteral: "Animal","Backpack", "Clothing","Document/ID", "Eletronic","Phone","Wallet", "Purse", "Others")
     
+    let randomImages = ["lostDog", "lostCat", "lostWallet", "lostLicence", "lostId", "lostPurse"]
+    
+    let filterOptions = ["Purse","Pet","Wallet","Document","Phone","Other"]
+    
+    var searchField: Bool = false
+    
+    func openCloseSearchBar(closedValue: Int, openedValue: Int, constraint: NSLayoutConstraint){
+        if searchField == false {
+            constraint.constant = 40
+            self.searchField = true
+        } else{
+            constraint.constant = 0
+            self.searchField = false
+        }
+    }
     
     func showToast(message : String, view: UIView) {
         

@@ -17,15 +17,23 @@ class SelectedItemViewController: UIViewController {
     @IBOutlet weak var viewPopUp: UIView!
     @IBOutlet weak var txvMessage: UIView!
 
+    var lostOrFoundSelector: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         // Do any additional setup after loading the view.
+        print("The pop up is open: \(self.lostOrFoundSelector)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        
+        if self.lostOrFoundSelector == 0{
+            self.viewPopUp.isHidden = false
+        }else{
+            self.viewPopUp.isHidden = true
+        }
         // Fetch the result for blocked/unblocked post
     }
     

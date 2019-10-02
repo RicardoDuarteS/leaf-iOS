@@ -14,9 +14,12 @@ class ChatListViewController: UIViewController {
     
     var profilePhoto = ["profilePhoto1", "profilePhoto2", "profilePhoto3", "profilePhoto4", "profilePhoto5"]
     var profileName = ["User1", "User2", "User3", "User4", "User5"]
+    var username : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.title = "Chat"
         registerNib()
         
     }
@@ -33,12 +36,7 @@ class ChatListViewController: UIViewController {
         self.tableView.delegate = self
     }
     
-    static func storyboardInstance() -> ChatListViewController? {
-        let storyboard = UIStoryboard(name: "Main",bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: "ChatListViewController") as? ChatListViewController
-    }
-    
-    
+
     
 
 }
@@ -58,14 +56,44 @@ extension ChatListViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListTableViewCell", for: indexPath) as? ChatListTableViewCell else {return UITableViewCell()}
         cell.imgUserImage.image = UIImage(named: profilePhoto[indexPath.row])
         cell.lblUserName.text = profileName[indexPath.row]
+        
+        print(self.username)
         cell.lblChatPreview.text = "Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla"
         
         return cell
     }
-    
+    //send data to chat view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.username = profileName[indexPath.row]
         performSegue(withIdentifier: "chatSegue", sender: self)
+
     }
+    //Delete row
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("User \(self.profileName[indexPath.row]) deleted")
+            self.profileName.remove(at: indexPath.row)
+            self.tableView.beginUpdates()
+            self.tableView.deleteRows(at: [indexPath], with: .left)
+            self.tableView.endUpdates()
+            self.tableView.reloadData()
+        }
+    }
+    
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+            if segue.identifier == "chatSegue"{
+                if let nextViewController = segue.destination as? ChatViewController {
+                    nextViewController.userName = self.username
+                }
+            }
+        }
     
     
 }
+

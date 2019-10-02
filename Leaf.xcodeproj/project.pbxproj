@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D003B22233DC29100F0E5AB /* FoundItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D003B20233DC29100F0E5AB /* FoundItemsTableViewCell.swift */; };
+		0D003B23233DC29100F0E5AB /* FoundItemsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D003B21233DC29100F0E5AB /* FoundItemsTableViewCell.xib */; };
+		0D003B25233DC3F300F0E5AB /* FoundItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D003B24233DC3F300F0E5AB /* FoundItemsViewController.swift */; };
+		0D003B29233DC79700F0E5AB /* LostItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D003B27233DC79700F0E5AB /* LostItemCollectionViewCell.swift */; };
+		0D003B2A233DC79700F0E5AB /* LostItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D003B28233DC79700F0E5AB /* LostItemCollectionViewCell.xib */; };
+		0D003B2E233DD62700F0E5AB /* FilterBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D003B2C233DD62700F0E5AB /* FilterBarCollectionViewCell.swift */; };
+		0D003B2F233DD62700F0E5AB /* FilterBarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D003B2D233DD62700F0E5AB /* FilterBarCollectionViewCell.xib */; };
+		0D003B312340346E00F0E5AB /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D003B302340346E00F0E5AB /* UserListViewController.swift */; };
+		0D003B342340379B00F0E5AB /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D003B322340379B00F0E5AB /* UserListTableViewCell.swift */; };
+		0D003B352340379B00F0E5AB /* UserListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D003B332340379B00F0E5AB /* UserListTableViewCell.xib */; };
+		0D003B372341C87100F0E5AB /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D003B362341C87100F0E5AB /* FeedbackViewController.swift */; };
 		0D14E3FB22AC29F40073FD4E /* AddLostOrFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14E3FA22AC29F40073FD4E /* AddLostOrFoundViewController.swift */; };
-		0D644BC623170D8F00983A24 /* FoundItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D644BC423170D8F00983A24 /* FoundItemCollectionViewCell.swift */; };
-		0D644BC723170D8F00983A24 /* FoundItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D644BC523170D8F00983A24 /* FoundItemCollectionViewCell.xib */; };
-		0DB6CFF822C49F0100864368 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6CFF722C49F0100864368 /* MyListViewController.swift */; };
-		0DB6CFFF22C49F8900864368 /* MyListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6CFFD22C49F8900864368 /* MyListCollectionViewCell.swift */; };
-		0DB6D00022C49F8900864368 /* MyListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB6CFFE22C49F8900864368 /* MyListCollectionViewCell.xib */; };
+		0D3CCD34233DBEAB0085ED6B /* LostItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CCD33233DBEAB0085ED6B /* LostItemViewController.swift */; };
+		0D9CE43B233BC6CA00DC2235 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9CE43A233BC6CA00DC2235 /* LoginViewController.swift */; };
+		0D9CE43E233BC6E200DC2235 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9CE43D233BC6E200DC2235 /* SignUpViewController.swift */; };
 		0DB6D00322CE7F2600864368 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D00222CE7F2600864368 /* ChatListViewController.swift */; };
 		0DB6D00622CE7F3E00864368 /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D00422CE7F3E00864368 /* ChatListTableViewCell.swift */; };
 		0DB6D00722CE7F3E00864368 /* ChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB6D00522CE7F3E00864368 /* ChatListTableViewCell.xib */; };
@@ -37,7 +46,6 @@
 		0DB778A722A8E52F001985C8 /* LostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB778A522A8E52F001985C8 /* LostTableViewCell.swift */; };
 		0DB778A822A8E52F001985C8 /* LostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB778A622A8E52F001985C8 /* LostTableViewCell.xib */; };
 		0DDF4C43230466D700A565B3 /* SelectedItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF4C42230466D700A565B3 /* SelectedItemViewController.swift */; };
-		0DFC0A3022B1665A00DA5A28 /* MainSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC0A2F22B1665A00DA5A28 /* MainSearchViewController.swift */; };
 		0DFC0A3922B2B4B100DA5A28 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC0A3822B2B4B100DA5A28 /* AppManager.swift */; };
 		997A30C9A03724E34D008393 /* Pods_Leaf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE49A01F9E61B88DD528919 /* Pods_Leaf.framework */; };
 /* End PBXBuildFile section */
@@ -53,12 +61,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D003B20233DC29100F0E5AB /* FoundItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundItemsTableViewCell.swift; sourceTree = "<group>"; };
+		0D003B21233DC29100F0E5AB /* FoundItemsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoundItemsTableViewCell.xib; sourceTree = "<group>"; };
+		0D003B24233DC3F300F0E5AB /* FoundItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundItemsViewController.swift; sourceTree = "<group>"; };
+		0D003B27233DC79700F0E5AB /* LostItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		0D003B28233DC79700F0E5AB /* LostItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LostItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		0D003B2C233DD62700F0E5AB /* FilterBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBarCollectionViewCell.swift; sourceTree = "<group>"; };
+		0D003B2D233DD62700F0E5AB /* FilterBarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterBarCollectionViewCell.xib; sourceTree = "<group>"; };
+		0D003B302340346E00F0E5AB /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		0D003B322340379B00F0E5AB /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
+		0D003B332340379B00F0E5AB /* UserListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListTableViewCell.xib; sourceTree = "<group>"; };
+		0D003B362341C87100F0E5AB /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		0D14E3FA22AC29F40073FD4E /* AddLostOrFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLostOrFoundViewController.swift; sourceTree = "<group>"; };
-		0D644BC423170D8F00983A24 /* FoundItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundItemCollectionViewCell.swift; sourceTree = "<group>"; };
-		0D644BC523170D8F00983A24 /* FoundItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoundItemCollectionViewCell.xib; sourceTree = "<group>"; };
-		0DB6CFF722C49F0100864368 /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
-		0DB6CFFD22C49F8900864368 /* MyListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListCollectionViewCell.swift; sourceTree = "<group>"; };
-		0DB6CFFE22C49F8900864368 /* MyListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyListCollectionViewCell.xib; sourceTree = "<group>"; };
+		0D3CCD33233DBEAB0085ED6B /* LostItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostItemViewController.swift; sourceTree = "<group>"; };
+		0D9CE43A233BC6CA00DC2235 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0D9CE43D233BC6E200DC2235 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0DB6D00222CE7F2600864368 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		0DB6D00422CE7F3E00864368 /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
 		0DB6D00522CE7F3E00864368 /* ChatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListTableViewCell.xib; sourceTree = "<group>"; };
@@ -87,7 +104,6 @@
 		0DB778A522A8E52F001985C8 /* LostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostTableViewCell.swift; sourceTree = "<group>"; };
 		0DB778A622A8E52F001985C8 /* LostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LostTableViewCell.xib; sourceTree = "<group>"; };
 		0DDF4C42230466D700A565B3 /* SelectedItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemViewController.swift; sourceTree = "<group>"; };
-		0DFC0A2F22B1665A00DA5A28 /* MainSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSearchViewController.swift; sourceTree = "<group>"; };
 		0DFC0A3822B2B4B100DA5A28 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		7A5D925061AAA6C208154B04 /* Pods-Leaf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leaf.debug.xcconfig"; path = "Target Support Files/Pods-Leaf/Pods-Leaf.debug.xcconfig"; sourceTree = "<group>"; };
 		8AE49A01F9E61B88DD528919 /* Pods_Leaf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Leaf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,14 +129,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0DB6CFF622C49EB900864368 /* Lost */ = {
+		0D003B26233DC5D700F0E5AB /* UserList */ = {
 			isa = PBXGroup;
 			children = (
-				0DB6CFF722C49F0100864368 /* MyListViewController.swift */,
-				0DB6CFFD22C49F8900864368 /* MyListCollectionViewCell.swift */,
-				0DB6CFFE22C49F8900864368 /* MyListCollectionViewCell.xib */,
+				0D003B302340346E00F0E5AB /* UserListViewController.swift */,
+				0D003B322340379B00F0E5AB /* UserListTableViewCell.swift */,
+				0D003B332340379B00F0E5AB /* UserListTableViewCell.xib */,
 			);
-			path = Lost;
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		0D003B2B233DD60A00F0E5AB /* FilterBar */ = {
+			isa = PBXGroup;
+			children = (
+				0D003B2C233DD62700F0E5AB /* FilterBarCollectionViewCell.swift */,
+				0D003B2D233DD62700F0E5AB /* FilterBarCollectionViewCell.xib */,
+			);
+			path = FilterBar;
+			sourceTree = "<group>";
+		};
+		0D003B382341C87C00F0E5AB /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				0D003B362341C87100F0E5AB /* FeedbackViewController.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		0D9CE439233BC6B700DC2235 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0D9CE43A233BC6CA00DC2235 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0D9CE43C233BC6CF00DC2235 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				0D9CE43D233BC6E200DC2235 /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		0DB6CFF622C49EB900864368 /* FoundItems */ = {
+			isa = PBXGroup;
+			children = (
+				0D003B24233DC3F300F0E5AB /* FoundItemsViewController.swift */,
+			);
+			path = FoundItems;
 			sourceTree = "<group>";
 		};
 		0DB6D00122CE7EF200864368 /* Chat */ = {
@@ -170,11 +227,16 @@
 			children = (
 				0DFC0A3A22B2B4BB00DA5A28 /* Manager */,
 				0DB7787C22A4BF89001985C8 /* Main */,
+				0D9CE439233BC6B700DC2235 /* Login */,
+				0D9CE43C233BC6CF00DC2235 /* SignUp */,
+				0DB6CFF622C49EB900864368 /* FoundItems */,
+				0DFC0A3122B2AB9C00DA5A28 /* LostItems */,
+				0D003B26233DC5D700F0E5AB /* UserList */,
+				0D003B2B233DD60A00F0E5AB /* FilterBar */,
 				0DDF4C412304665C00A565B3 /* SelectedItem */,
-				0DFC0A3122B2AB9C00DA5A28 /* Found */,
-				0DB6CFF622C49EB900864368 /* Lost */,
 				0DB7788E22A6C243001985C8 /* AddItemLostOrFound */,
 				0DB7787B22A4BF6C001985C8 /* Profile */,
+				0D003B382341C87C00F0E5AB /* Feedback */,
 				0DB6D00122CE7EF200864368 /* Chat */,
 				0DB7787022A4BC05001985C8 /* Assets.xcassets */,
 				0DFC0A2E22B1663300DA5A28 /* Recicle Classes */,
@@ -200,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				0DB7786A22A4BC02001985C8 /* Main.storyboard */,
-				0DFC0A2F22B1665A00DA5A28 /* MainSearchViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -233,6 +294,8 @@
 		0DFC0A2E22B1663300DA5A28 /* Recicle Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0D003B20233DC29100F0E5AB /* FoundItemsTableViewCell.swift */,
+				0D003B21233DC29100F0E5AB /* FoundItemsTableViewCell.xib */,
 				0DB7788D22A6AB4D001985C8 /* Products */,
 				0DB7787D22A4BFDF001985C8 /* MainViewController.swift */,
 				0DB7788722A4C994001985C8 /* MainCollectionViewCell.swift */,
@@ -243,13 +306,14 @@
 			path = "Recicle Classes";
 			sourceTree = "<group>";
 		};
-		0DFC0A3122B2AB9C00DA5A28 /* Found */ = {
+		0DFC0A3122B2AB9C00DA5A28 /* LostItems */ = {
 			isa = PBXGroup;
 			children = (
-				0D644BC423170D8F00983A24 /* FoundItemCollectionViewCell.swift */,
-				0D644BC523170D8F00983A24 /* FoundItemCollectionViewCell.xib */,
+				0D3CCD33233DBEAB0085ED6B /* LostItemViewController.swift */,
+				0D003B27233DC79700F0E5AB /* LostItemCollectionViewCell.swift */,
+				0D003B28233DC79700F0E5AB /* LostItemCollectionViewCell.xib */,
 			);
-			path = Found;
+			path = LostItems;
 			sourceTree = "<group>";
 		};
 		0DFC0A3A22B2B4BB00DA5A28 /* Manager */ = {
@@ -369,16 +433,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DB6D00022C49F8900864368 /* MyListCollectionViewCell.xib in Resources */,
 				0DB7787422A4BC05001985C8 /* LaunchScreen.storyboard in Resources */,
 				0DB6D00C22CE898000864368 /* ChatTableViewCell.xib in Resources */,
+				0D003B352340379B00F0E5AB /* UserListTableViewCell.xib in Resources */,
+				0D003B2A233DC79700F0E5AB /* LostItemCollectionViewCell.xib in Resources */,
 				0DB7787122A4BC05001985C8 /* Assets.xcassets in Resources */,
+				0D003B23233DC29100F0E5AB /* FoundItemsTableViewCell.xib in Resources */,
 				0DB7786C22A4BC02001985C8 /* Main.storyboard in Resources */,
 				0DB6D00722CE7F3E00864368 /* ChatListTableViewCell.xib in Resources */,
-				0D644BC723170D8F00983A24 /* FoundItemCollectionViewCell.xib in Resources */,
 				0DB778A822A8E52F001985C8 /* LostTableViewCell.xib in Resources */,
 				0DB7788A22A4C994001985C8 /* MainCollectionViewCell.xib in Resources */,
 				0DB7789822A6C3AE001985C8 /* ProfileTableViewCell.xib in Resources */,
+				0D003B2F233DD62700F0E5AB /* FilterBarCollectionViewCell.xib in Resources */,
 				0DB778A022A8BCB8001985C8 /* ProfileUserDetailsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,26 +506,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D003B342340379B00F0E5AB /* UserListTableViewCell.swift in Sources */,
 				0DB7787E22A4BFDF001985C8 /* MainViewController.swift in Sources */,
 				0DB7789722A6C3AE001985C8 /* ProfileTableViewCell.swift in Sources */,
+				0D003B25233DC3F300F0E5AB /* FoundItemsViewController.swift in Sources */,
 				0DB7786F22A4BC02001985C8 /* Leaf.xcdatamodeld in Sources */,
 				0DB7789F22A8BCB8001985C8 /* ProfileUserDetailsTableViewCell.swift in Sources */,
 				0DB778A722A8E52F001985C8 /* LostTableViewCell.swift in Sources */,
 				0DB6D00B22CE898000864368 /* ChatTableViewCell.swift in Sources */,
+				0D9CE43E233BC6E200DC2235 /* SignUpViewController.swift in Sources */,
+				0D3CCD34233DBEAB0085ED6B /* LostItemViewController.swift in Sources */,
 				0DFC0A3922B2B4B100DA5A28 /* AppManager.swift in Sources */,
-				0DB6CFFF22C49F8900864368 /* MyListCollectionViewCell.swift in Sources */,
 				0DB7786722A4BC02001985C8 /* AppDelegate.swift in Sources */,
+				0D9CE43B233BC6CA00DC2235 /* LoginViewController.swift in Sources */,
+				0D003B29233DC79700F0E5AB /* LostItemCollectionViewCell.swift in Sources */,
 				0DB7789222A6C2C3001985C8 /* ProfileViewController.swift in Sources */,
 				0DB7788C22A6A632001985C8 /* ProductsViewController.swift in Sources */,
 				0DB6D00E22CE899500864368 /* ChstViewController.swift in Sources */,
 				0DB7788922A4C994001985C8 /* MainCollectionViewCell.swift in Sources */,
+				0D003B312340346E00F0E5AB /* UserListViewController.swift in Sources */,
+				0D003B2E233DD62700F0E5AB /* FilterBarCollectionViewCell.swift in Sources */,
 				0DB6D00322CE7F2600864368 /* ChatListViewController.swift in Sources */,
-				0D644BC623170D8F00983A24 /* FoundItemCollectionViewCell.swift in Sources */,
+				0D003B22233DC29100F0E5AB /* FoundItemsTableViewCell.swift in Sources */,
 				0D14E3FB22AC29F40073FD4E /* AddLostOrFoundViewController.swift in Sources */,
+				0D003B372341C87100F0E5AB /* FeedbackViewController.swift in Sources */,
 				0DB6D00622CE7F3E00864368 /* ChatListTableViewCell.swift in Sources */,
 				0DDF4C43230466D700A565B3 /* SelectedItemViewController.swift in Sources */,
-				0DB6CFF822C49F0100864368 /* MyListViewController.swift in Sources */,
-				0DFC0A3022B1665A00DA5A28 /* MainSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

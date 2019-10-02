@@ -25,6 +25,8 @@ class AddLostOrFoundViewController: UIViewController, UIImagePickerControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Post"
+        
         self.btnAddImage.layer.borderWidth = 2
         self.btnAddImage.layer.borderColor = UIColor(red: 70, green: 205, blue: 70, alpha: 1).cgColor
         self.imagePickerController.delegate = self
@@ -96,23 +98,6 @@ class AddLostOrFoundViewController: UIViewController, UIImagePickerControllerDel
         self.present(self.imagePickerController, animated: true, completion: nil)
     }
     
-    
-//    @IBAction func btnLostClicked(_ sender: UIButton) {
-//        self.btnLost.layer.borderColor = UIColor.white.cgColor
-//        self.btnLost.layer.borderWidth = 4
-//        self.btnFound.layer.borderWidth = 0
-//        self.selected = "lost"
-//        print(selected)
-//    }
-//
-//    @IBAction func btnFoundClicked(_ sender: UIButton) {
-//        self.btnFound.layer.borderColor = UIColor(named: "leafGreen")?.cgColor
-//        self.btnFound.layer.borderWidth = 4
-//        self.btnLost.layer.borderWidth = 0
-//        self.selected = "found"
-//        print(selected)
-//    }
-    
     @IBAction func btnSegmentedControlClicked(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex{
         case 0:
@@ -136,7 +121,7 @@ class AddLostOrFoundViewController: UIViewController, UIImagePickerControllerDel
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
             //Add item to the API
             
-            self.performSegue(withIdentifier: "lostItemSegue", sender: self)
+            self.performSegue(withIdentifier: "userListSegue", sender: self)
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
