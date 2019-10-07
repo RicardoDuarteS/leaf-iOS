@@ -19,6 +19,8 @@
 		0D003B352340379B00F0E5AB /* UserListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D003B332340379B00F0E5AB /* UserListTableViewCell.xib */; };
 		0D003B372341C87100F0E5AB /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D003B362341C87100F0E5AB /* FeedbackViewController.swift */; };
 		0D14E3FB22AC29F40073FD4E /* AddLostOrFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14E3FA22AC29F40073FD4E /* AddLostOrFoundViewController.swift */; };
+		0D160697234AD527000DA16C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D160696234AD527000DA16C /* User.swift */; };
+		0D31B24C2346779400EA8C38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D31B24B2346779400EA8C38 /* GoogleService-Info.plist */; };
 		0D3CCD34233DBEAB0085ED6B /* LostItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CCD33233DBEAB0085ED6B /* LostItemViewController.swift */; };
 		0D9CE43B233BC6CA00DC2235 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9CE43A233BC6CA00DC2235 /* LoginViewController.swift */; };
 		0D9CE43E233BC6E200DC2235 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9CE43D233BC6E200DC2235 /* SignUpViewController.swift */; };
@@ -73,6 +75,8 @@
 		0D003B332340379B00F0E5AB /* UserListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListTableViewCell.xib; sourceTree = "<group>"; };
 		0D003B362341C87100F0E5AB /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		0D14E3FA22AC29F40073FD4E /* AddLostOrFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLostOrFoundViewController.swift; sourceTree = "<group>"; };
+		0D160696234AD527000DA16C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0D31B24B2346779400EA8C38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D3CCD33233DBEAB0085ED6B /* LostItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostItemViewController.swift; sourceTree = "<group>"; };
 		0D9CE43A233BC6CA00DC2235 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0D9CE43D233BC6E200DC2235 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +160,33 @@
 			path = Feedback;
 			sourceTree = "<group>";
 		};
+		0D31B24D23467C1100EA8C38 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0DB7787C22A4BF89001985C8 /* Main */,
+				0D9CE439233BC6B700DC2235 /* Login */,
+				0D9CE43C233BC6CF00DC2235 /* SignUp */,
+				0DB6CFF622C49EB900864368 /* FoundItems */,
+				0DFC0A3122B2AB9C00DA5A28 /* LostItems */,
+				0D003B26233DC5D700F0E5AB /* UserList */,
+				0D003B2B233DD60A00F0E5AB /* FilterBar */,
+				0DDF4C412304665C00A565B3 /* SelectedItem */,
+				0DB7788E22A6C243001985C8 /* AddItemLostOrFound */,
+				0DB7787B22A4BF6C001985C8 /* Profile */,
+				0D003B382341C87C00F0E5AB /* Feedback */,
+				0DB6D00122CE7EF200864368 /* Chat */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0D31B24E23467C1D00EA8C38 /* DatabaseComunication */ = {
+			isa = PBXGroup;
+			children = (
+				0D160696234AD527000DA16C /* User.swift */,
+			);
+			path = DatabaseComunication;
+			sourceTree = "<group>";
+		};
 		0D9CE439233BC6B700DC2235 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,22 +256,13 @@
 		0DB7786522A4BC02001985C8 /* Leaf */ = {
 			isa = PBXGroup;
 			children = (
+				0D31B24E23467C1D00EA8C38 /* DatabaseComunication */,
+				0D31B24D23467C1100EA8C38 /* ViewControllers */,
 				0DFC0A3A22B2B4BB00DA5A28 /* Manager */,
-				0DB7787C22A4BF89001985C8 /* Main */,
-				0D9CE439233BC6B700DC2235 /* Login */,
-				0D9CE43C233BC6CF00DC2235 /* SignUp */,
-				0DB6CFF622C49EB900864368 /* FoundItems */,
-				0DFC0A3122B2AB9C00DA5A28 /* LostItems */,
-				0D003B26233DC5D700F0E5AB /* UserList */,
-				0D003B2B233DD60A00F0E5AB /* FilterBar */,
-				0DDF4C412304665C00A565B3 /* SelectedItem */,
-				0DB7788E22A6C243001985C8 /* AddItemLostOrFound */,
-				0DB7787B22A4BF6C001985C8 /* Profile */,
-				0D003B382341C87C00F0E5AB /* Feedback */,
-				0DB6D00122CE7EF200864368 /* Chat */,
 				0DB7787022A4BC05001985C8 /* Assets.xcassets */,
 				0DFC0A2E22B1663300DA5A28 /* Recicle Classes */,
 				0DB7787522A4BC05001985C8 /* Info.plist */,
+				0D31B24B2346779400EA8C38 /* GoogleService-Info.plist */,
 				0DB7786D22A4BC02001985C8 /* Leaf.xcdatamodeld */,
 			);
 			path = Leaf;
@@ -446,6 +468,7 @@
 				0DB7789822A6C3AE001985C8 /* ProfileTableViewCell.xib in Resources */,
 				0D003B2F233DD62700F0E5AB /* FilterBarCollectionViewCell.xib in Resources */,
 				0DB778A022A8BCB8001985C8 /* ProfileUserDetailsTableViewCell.xib in Resources */,
+				0D31B24C2346779400EA8C38 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +534,7 @@
 				0DB7789722A6C3AE001985C8 /* ProfileTableViewCell.swift in Sources */,
 				0D003B25233DC3F300F0E5AB /* FoundItemsViewController.swift in Sources */,
 				0DB7786F22A4BC02001985C8 /* Leaf.xcdatamodeld in Sources */,
+				0D160697234AD527000DA16C /* User.swift in Sources */,
 				0DB7789F22A8BCB8001985C8 /* ProfileUserDetailsTableViewCell.swift in Sources */,
 				0DB778A722A8E52F001985C8 /* LostTableViewCell.swift in Sources */,
 				0DB6D00B22CE898000864368 /* ChatTableViewCell.swift in Sources */,

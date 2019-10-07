@@ -16,26 +16,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LeafWhite" translatesAutoresizingMaskIntoConstraints="NO" id="i6w-B5-oMM">
-                                <rect key="frame" x="40" y="243" width="334" height="250"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ix8-yO-gvy">
+                                <rect key="frame" x="32" y="410" width="350" height="16"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="jRy-uI-gQM"/>
+                                    <constraint firstAttribute="height" constant="16" id="2Hw-54-QVt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEAF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MA6-IO-Clk">
+                                <rect key="frame" x="32" y="434" width="350" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hiz-7B-ypq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LeafWhite" translatesAutoresizingMaskIntoConstraints="NO" id="i6w-B5-oMM">
+                                <rect key="frame" x="143" y="250" width="128.00000000000011" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="aC5-du-HqV"/>
+                                    <constraint firstAttribute="height" constant="128" id="xMO-sh-ErJ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.27450980390000002" green="0.80392156859999997" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.27450980390000002" green="0.58823529409999997" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="i6w-B5-oMM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Bwg-jt-ETD"/>
-                            <constraint firstItem="i6w-B5-oMM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ggz-6W-NFN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i6w-B5-oMM" secondAttribute="trailing" constant="40" id="heA-7f-eRk"/>
-                            <constraint firstItem="i6w-B5-oMM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="lWx-1E-ySo"/>
+                            <constraint firstItem="MA6-IO-Clk" firstAttribute="top" secondItem="ix8-yO-gvy" secondAttribute="bottom" constant="8" id="3yz-3Y-3OA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MA6-IO-Clk" secondAttribute="bottom" constant="252" id="50v-gI-iUl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MA6-IO-Clk" secondAttribute="trailing" constant="32" id="6fF-Oy-xD8"/>
+                            <constraint firstItem="i6w-B5-oMM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Enx-TH-dM7"/>
+                            <constraint firstItem="MA6-IO-Clk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="WvV-3P-CK5"/>
+                            <constraint firstItem="i6w-B5-oMM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="250" id="inX-Ta-At4"/>
+                            <constraint firstItem="ix8-yO-gvy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="r5T-PQ-TdI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ix8-yO-gvy" secondAttribute="trailing" constant="32" id="tIR-SW-MhG"/>
+                            <constraint firstItem="ix8-yO-gvy" firstAttribute="top" secondItem="i6w-B5-oMM" secondAttribute="bottom" constant="32" id="xoS-nb-bb3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="374.18478260869568"/>
         </scene>
     </scenes>
     <resources>

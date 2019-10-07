@@ -3,4 +3,333 @@
    uuid = "648C54F1-68F4-4AED-8EB3-49F46D9D0656"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4FA3E10A-5EA1-4897-A378-4AA3085964FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leaf/ViewControllers/Profile/ProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "567DFF3C-F8EC-4009-9AF2-FD69BABEF4A0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leaf/ViewControllers/Chat/ChatListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31B728C4-EA7D-42E0-BDDE-2A24D64CA0BF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leaf/ViewControllers/Chat/ChatListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "845C449B-12AE-43F0-B7AF-48D85C148C8E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leaf/DatabaseComunication/User.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "User"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "845C449B-12AE-43F0-B7AF-48D85C148C8E - b23755be0564b42d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.username.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  uuid = "845C449B-12AE-43F0-B7AF-48D85C148C8E - 8882f87d7c920431"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.username.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "153">
+               </Location>
+               <Location
+                  uuid = "845C449B-12AE-43F0-B7AF-48D85C148C8E - 88ef0d257273102e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.username.modify : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "845C449B-12AE-43F0-B7AF-48D85C148C8E - 5aeabcad6833bc31"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.username.modify : Swift.Optional&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "845C449B-12AE-43F0-B7AF-48D85C148C8E - 2a332a81ec194043"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.init() -&gt; Leaf.User"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0FE58207-91E6-4D43-80A9-5841ACB7EEE3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leaf/DatabaseComunication/User.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "User"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "0FE58207-91E6-4D43-80A9-5841ACB7EEE3 - f39c80922c4d7e56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.email.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  uuid = "0FE58207-91E6-4D43-80A9-5841ACB7EEE3 - fcbc8fc31d44ce5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.email.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "153">
+               </Location>
+               <Location
+                  uuid = "0FE58207-91E6-4D43-80A9-5841ACB7EEE3 - 94d7099187c5da4b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.email.modify : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "0FE58207-91E6-4D43-80A9-5841ACB7EEE3 - a04cbf3140b8025a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.email.modify : Swift.Optional&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "0FE58207-91E6-4D43-80A9-5841ACB7EEE3 - 2a332a81ec194043"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.init() -&gt; Leaf.User"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "129">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F5503F1-250A-4A54-8932-F1FC505B1FB5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leaf/DatabaseComunication/User.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "User"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "9F5503F1-250A-4A54-8932-F1FC505B1FB5 - e35bde7778609464"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.phone.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  uuid = "9F5503F1-250A-4A54-8932-F1FC505B1FB5 - ec7bdaa8a91ee468"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.phone.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "153">
+               </Location>
+               <Location
+                  uuid = "9F5503F1-250A-4A54-8932-F1FC505B1FB5 - 85926776d39ff059"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.phone.modify : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "9F5503F1-250A-4A54-8932-F1FC505B1FB5 - 5212069b9a0ab468"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.phone.modify : Swift.Optional&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "9F5503F1-250A-4A54-8932-F1FC505B1FB5 - 2a332a81ec194043"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leaf.User.init() -&gt; Leaf.User"
+                  moduleName = "Leaf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardoduarte/Documents/Wise%20Fox%20Entertainment/WiseFoxes/Leaf/Leaf/DatabaseComunication/User.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "226">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

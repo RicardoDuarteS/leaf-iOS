@@ -8,6 +8,10 @@ target 'Leaf' do
   # Pods for Leaf
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire', '~> 4.7'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+
   pod 'LTHRadioButton'
 
 

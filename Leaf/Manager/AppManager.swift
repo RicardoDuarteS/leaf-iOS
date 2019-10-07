@@ -15,7 +15,7 @@ class AppManager {
     
     let randomImages = ["lostDog", "lostCat", "lostWallet", "lostLicence", "lostId", "lostPurse"]
     
-    let filterOptions = ["Purse","Pet","Wallet","Document","Phone","Other"]
+    let filterOptions = ["Select category","Purse","Pet","Wallet","Document","Phone","Other"]
     
     var searchField: Bool = false
     
