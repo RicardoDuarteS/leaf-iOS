@@ -22,6 +22,7 @@ class AddLostOrFoundViewController: UIViewController, UIImagePickerControllerDel
     let imagePickerController = UIImagePickerController()
     var selected = "none"
     let appManager = AppManager()
+    let cameraHandler = CameraHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,11 +59,11 @@ class AddLostOrFoundViewController: UIViewController, UIImagePickerControllerDel
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
-            self.openCamera()
+            self.cameraHandler.openCamera(imagePickerController: self.imagePickerController, viewController: self)
         }))
         
         alert.addAction(UIAlertAction(title: "Galery", style: .default, handler: { _ in
-            self.openGallery()
+            self.cameraHandler.openGallery(imagePickerController: self.imagePickerController, viewController: self)
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -81,25 +82,6 @@ class AddLostOrFoundViewController: UIViewController, UIImagePickerControllerDel
         
         self.present(alert, animated: true, completion: nil)
 
-    }
-    
-    //Camera and library actions
-    func openCamera(){
-        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera)){
-            self.imagePickerController.sourceType = UIImagePickerController.SourceType.camera
-            self.imagePickerController.allowsEditing = true
-            self.present(self.imagePickerController, animated: true, completion: nil)
-        }else{
-            let alert  = UIAlertController(title: "Warning", message: "You can't use your camera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func openGallery(){
-        self.imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
-        self.imagePickerController.allowsEditing = true
-        self.present(self.imagePickerController, animated: true, completion: nil)
     }
     
     @IBAction func btnSegmentedControlClicked(_ sender: UISegmentedControl) {

@@ -9,34 +9,18 @@
 import UIKit
 
 class User: NSObject {
-        
-    private var _username: String = ""
-    private var _email: String = ""
-    private var _phone: String = ""
+    var id: String?
+    var username: String?
+    var email: String?
+    var phone: String?
+    var profileImageUrl: String?
     
-       
-    var username: String? {
-        return _username
+    init(dictionary: [String: AnyObject]) {
+        self.id = dictionary["id"] as? String ?? ""
+        self.username = dictionary["username"] as? String ?? ""
+        self.email = dictionary["email"] as? String ?? ""
+        self.phone = dictionary["phone"] as? String ?? ""
+        self.profileImageUrl = dictionary["profileImageUrl"] as? String ?? ""
     }
-       
-    var email: String? {
-        return _email
-    }
-    
-    var phone: String?{
-        return _phone
-    }
-       
-    override init(){
-        self._username = ""
-        self._email = ""
-        self._phone = ""
-    }
-       
-    init(username: String, email: String, phone: String){
-         self._username = username
-         self._email = email
-        self._phone = phone
-       }
     
 }

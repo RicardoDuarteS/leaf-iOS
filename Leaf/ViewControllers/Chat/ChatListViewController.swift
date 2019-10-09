@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
+
 class ChatListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -18,18 +19,20 @@ class ChatListViewController: UIViewController {
     var profilePhoto = ["profilePhoto1", "profilePhoto2", "profilePhoto3", "profilePhoto4", "profilePhoto5"]
 
     var users = [User]()
+    var ref: DatabaseReference?
+    var databaseHandle: DatabaseHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Chat"
         registerNib()
-
+        fetchUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-        fetchUser()
+        
     }
     
     func registerNib(){
@@ -41,22 +44,26 @@ class ChatListViewController: UIViewController {
     }
     
     func fetchUser(){
-         
-        Database.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
-            
-            if let dictionary = snapshot.value as? [String: AnyObject]{
-                let user = User()
-                //set dictionary as the array and use its key to identify each item
-                user.setValuesForKeys(dictionary)
-                self.users.append(user)
-                print(dictionary)
-                //dispatch
-                DispatchQueue.main.async(execute: {
-                    self.tableView.reloadData()
-                })
-            }
-        }, withCancel: nil)
-    }
+        //reference database
+        self.ref = Database.database().reference()
+        self.ref?.child("users").observe(.childAdded, with: { (snapshot) in
+        print("User found")
+        print(snapshot)
+        //set dictionary as the array and use its key to identify each item
+        if let dictionary = snapshot.value as? [String: AnyObject]{
+            let user = User(dictionary: dictionary)
+            self.users.append(user)
+            print(user)
+            //dispatch
+            DispatchQueue.main.async(execute: {
+                self.tableView.reloadData()
+            })
+        }
+    }, withCancel: nil)
+}
+    
+    
+     
 }
 
 extension ChatListViewController: UITableViewDataSource, UITableViewDelegate {

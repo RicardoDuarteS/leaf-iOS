@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UIImagePickerControllerDelegate {
 
     //Sign up
     @IBOutlet weak var imgUserProfilePhoto: UIImageView!
@@ -28,12 +28,23 @@ class SignUpViewController: UIViewController {
     
     //Variables and constants
     var showPopUp = true
+    let imagePickerController = UIImagePickerController()
+    
+    //handler
+    let cameraHandler = CameraHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+//        self.handleSelectProfileImage()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tap:)))
+        self.imgUserProfilePhoto.isUserInteractionEnabled = true
+        self.imgUserProfilePhoto.addGestureRecognizer(tap)
+    }
+    
+    @objc func imageTapped(tap: UITapGestureRecognizer){
+        let tappedImage = tap.view as! UIImageView
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +64,51 @@ class SignUpViewController: UIViewController {
             txfPhoneNumber.attributedPlaceholder = NSAttributedString(string: "txfPhoneNumber", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         }
     }
+    
+    //img picker controller
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.imgUserProfilePhoto.contentMode = .scaleAspectFit
+            self.imgUserProfilePhoto.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //img picker controller cancel
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func addProfilePictureClicked(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.cameraHandler.openCamera(imagePickerController: self.imagePickerController, viewController: self)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Galery", style: .default, handler: { _ in
+            self.cameraHandler.openGallery(imagePickerController: self.imagePickerController, viewController: self)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        /*If you want work actionsheet on ipad
+         then you have to use popoverPresentationController to present the actionsheet,
+         otherwise app will crash on iPad */
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            alert.popoverPresentationController?.sourceView = sender
+            alert.popoverPresentationController?.sourceRect = sender.bounds
+            alert.popoverPresentationController?.permittedArrowDirections = .up
+        default:
+            break
+        }
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     
     //Login action
     @IBAction func btnSignUpClicked(_ sender: UIButton) {
@@ -123,6 +179,7 @@ class SignUpViewController: UIViewController {
         print("Pop up closed")
     }
     @IBAction func btnSubmitConfirmationCodeClicked(_ sender: UIButton) {
+        
     }
     
     
