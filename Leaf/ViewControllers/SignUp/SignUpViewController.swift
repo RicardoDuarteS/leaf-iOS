@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
-class SignUpViewController: UIViewController, UIImagePickerControllerDelegate {
+class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     //Sign up
     @IBOutlet weak var imgUserProfilePhoto: UIImageView!
@@ -28,7 +29,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate {
     
     //Variables and constants
     var showPopUp = true
-    let imagePickerController = UIImagePickerController()
+    let picker = UIImagePickerController()
     
     //handler
     let cameraHandler = CameraHandler()
@@ -41,6 +42,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate {
         let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tap:)))
         self.imgUserProfilePhoto.isUserInteractionEnabled = true
         self.imgUserProfilePhoto.addGestureRecognizer(tap)
+        self.picker.delegate = self
+        self.picker.allowsEditing = true
     }
     
     @objc func imageTapped(tap: UITapGestureRecognizer){
@@ -67,9 +70,14 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate {
     
     //img picker controller
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.imgUserProfilePhoto.contentMode = .scaleAspectFit
+            self.imgUserProfilePhoto.image = editedImage
+        }else if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.imgUserProfilePhoto.contentMode = .scaleAspectFit
             self.imgUserProfilePhoto.image = pickedImage
+            
+            print(info)
         }
         
         dismiss(animated: true, completion: nil)
@@ -84,11 +92,11 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate {
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
-            self.cameraHandler.openCamera(imagePickerController: self.imagePickerController, viewController: self)
+            self.cameraHandler.openCamera(imagePickerController: self.picker, viewController: self)
         }))
         
         alert.addAction(UIAlertAction(title: "Galery", style: .default, handler: { _ in
-            self.cameraHandler.openGallery(imagePickerController: self.imagePickerController, viewController: self)
+            self.cameraHandler.openGallery(imagePickerController: self.picker, viewController: self)
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -112,7 +120,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate {
     
     //Login action
     @IBAction func btnSignUpClicked(_ sender: UIButton) {
-//        popUpAction()
+        //popUpAction()
         //make sure the text fields aren't empty and the password is the same as the confirm password
         if (txfEmail.text != "" && txfPassword.text != "" && txfConfirmPassword.text != "") && (txfPassword.text == txfConfirmPassword.text){
         //Auth firebase
@@ -130,29 +138,38 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate {
                 guard let uid = authResult?.user.uid else {
                     return
                 }
-                //Add reference
-                let ref = Database.database().reference(fromURL: "https://leaf-6d599.firebaseio.com/")
-                //Add user and uid to the user
-                let usersReference = ref.child("users").child(uid)
-                //Add values
-                let values = ["username": name,
-                              "email": email,
-                              "phone": phoneNumber]
-            
-                //Add data to database
-                usersReference.updateChildValues(values) { (err, ref) in
-                    if err != nil {
-                        print(err)
-                        return
-                    }
-                    print("Saved user successfully into firebase database")
-                    
-                    //instantiate next controller
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "homeVC")
-                    self.navigationController?.pushViewController(vc, animated: true) 
-                }
                 
+                //Store user image into the server
+                let imageName = NSUUID().uuidString
+                //Create the reference to the image inside the firebase storage
+                let storageRef = Storage.storage().reference().child("profile_image").child("\(imageName).png")
+                //Upload data
+                if let uploadData = self.imgUserProfilePhoto.image!.pngData(){
+                    storageRef.putData(uploadData, metadata: nil) { (_, err) in
+                        //Check if there's no error
+                        if let error = error{
+                            print(error)
+                            return
+                        }
+                        
+                        storageRef.downloadURL { (url, err) in
+                            if let err = err {
+                                print(err)
+                                return
+                            }
+                            
+                            guard let url = url else {return}
+                            //Add values
+                            let values = ["username": name,
+                                          "email": email,
+                                          "phone": phoneNumber,
+                                          "profile_image": url.absoluteString]
+                            
+                            self.registerUserIntoDatabaseWithUID(uid, values: values as [String:AnyObject])
+                        }
+                    }
+                }
+                //Add Of 3
             }
         }else {
             //If something is wrong display an alert controller
@@ -162,9 +179,28 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate {
             }))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    //Database reference
+    fileprivate func registerUserIntoDatabaseWithUID(_ uid: String, values: [String: AnyObject]) {
+        let ref = Database.database().reference()
+        let usersReference = ref.child("users").child(uid)
         
+        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+            
+            if let err = err {
+                print(err)
+                return
+            }
+            print("Saved user successfully into firebase database")
+    
+            //instantiate next controller
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "homeVC")
+            self.navigationController?.pushViewController(vc, animated: true)
 
-        
+//            self.dismiss(animated: true, completion: nil)
+        })
     }
     
     @IBAction func btnLoginClicked(_ sender: UIButton) {

@@ -11,7 +11,7 @@ target 'Leaf' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
-
+  pod 'Firebase/Storage'
   pod 'LTHRadioButton'
 
 

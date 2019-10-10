@@ -31,6 +31,8 @@ class ProfileViewController: UIViewController {
     var userData: [String:Any] = [:]
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Profile"
@@ -59,9 +61,11 @@ class ProfileViewController: UIViewController {
         let uid = Auth.auth().currentUser?.uid
         Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value) { (snapshot) in
             if let dictionary = snapshot.value as? [String : AnyObject] {
+                
                 self.userData["name"] = dictionary["username"] as? String
                 self.userData["email"] = dictionary["email"] as? String
                 self.userData["phone"] = dictionary["phone"] as? String
+                self.userData["profile_image"] = dictionary["profile_image"] as? String
                 print("User data: \n\(self.userData)")
                 self.tableView.reloadData()
             }
@@ -152,10 +156,15 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row == 0{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileUserDetailsTableViewCell", for: indexPath) as? ProfileUserDetailsTableViewCell else { return UITableViewCell()}
+            
             //profile Image
             cell.imgProfilePicture.image = UIImage(named: "profilePictureDefault")
             //Username
             cell.lblUsername.text = self.userData["name"] as? String
+            //user profile picture
+            if let profileImageUrl = userData["profile_image"] {
+                
+            }
             
             return cell
         }else if indexPath.row == 1{

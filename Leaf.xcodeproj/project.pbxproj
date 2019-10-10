@@ -22,6 +22,7 @@
 		0D160697234AD527000DA16C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D160696234AD527000DA16C /* User.swift */; };
 		0D16069A234E5A33000DA16C /* Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D160699234E5A33000DA16C /* Handlers.swift */; };
 		0D16069C234E65E4000DA16C /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D16069B234E65E4000DA16C /* CameraHandler.swift */; };
+		0D16069F234F9973000DA16C /* HandleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D16069E234F9973000DA16C /* HandleApi.swift */; };
 		0D31B24C2346779400EA8C38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D31B24B2346779400EA8C38 /* GoogleService-Info.plist */; };
 		0D3CCD34233DBEAB0085ED6B /* LostItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CCD33233DBEAB0085ED6B /* LostItemViewController.swift */; };
 		0D9CE43B233BC6CA00DC2235 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9CE43A233BC6CA00DC2235 /* LoginViewController.swift */; };
@@ -80,6 +81,7 @@
 		0D160696234AD527000DA16C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0D160699234E5A33000DA16C /* Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handlers.swift; sourceTree = "<group>"; };
 		0D16069B234E65E4000DA16C /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
+		0D16069E234F9973000DA16C /* HandleApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleApi.swift; sourceTree = "<group>"; };
 		0D31B24B2346779400EA8C38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D3CCD33233DBEAB0085ED6B /* LostItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostItemViewController.swift; sourceTree = "<group>"; };
 		0D9CE43A233BC6CA00DC2235 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -173,10 +175,17 @@
 			path = Handlers;
 			sourceTree = "<group>";
 		};
+		0D16069D234F98BD000DA16C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D160696234AD527000DA16C /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0D31B24D23467C1100EA8C38 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0DB7787C22A4BF89001985C8 /* Main */,
 				0D9CE439233BC6B700DC2235 /* Login */,
 				0D9CE43C233BC6CF00DC2235 /* SignUp */,
 				0DB6CFF622C49EB900864368 /* FoundItems */,
@@ -195,7 +204,8 @@
 		0D31B24E23467C1D00EA8C38 /* DatabaseComunication */ = {
 			isa = PBXGroup;
 			children = (
-				0D160696234AD527000DA16C /* User.swift */,
+				0D16069D234F98BD000DA16C /* Model */,
+				0D16069E234F9973000DA16C /* HandleApi.swift */,
 			);
 			path = DatabaseComunication;
 			sourceTree = "<group>";
@@ -269,6 +279,7 @@
 		0DB7786522A4BC02001985C8 /* Leaf */ = {
 			isa = PBXGroup;
 			children = (
+				0DB7787C22A4BF89001985C8 /* Storyboards */,
 				0D31B24E23467C1D00EA8C38 /* DatabaseComunication */,
 				0D31B24D23467C1100EA8C38 /* ViewControllers */,
 				0DFC0A3A22B2B4BB00DA5A28 /* Manager */,
@@ -293,12 +304,12 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		0DB7787C22A4BF89001985C8 /* Main */ = {
+		0DB7787C22A4BF89001985C8 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				0DB7786A22A4BC02001985C8 /* Main.storyboard */,
 			);
-			path = Main;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		0DB7788D22A6AB4D001985C8 /* Products */ = {
@@ -567,6 +578,7 @@
 				0D003B312340346E00F0E5AB /* UserListViewController.swift in Sources */,
 				0D003B2E233DD62700F0E5AB /* FilterBarCollectionViewCell.swift in Sources */,
 				0DB6D00322CE7F2600864368 /* ChatListViewController.swift in Sources */,
+				0D16069F234F9973000DA16C /* HandleApi.swift in Sources */,
 				0D003B22233DC29100F0E5AB /* FoundItemsTableViewCell.swift in Sources */,
 				0D14E3FB22AC29F40073FD4E /* AddLostOrFoundViewController.swift in Sources */,
 				0D003B372341C87100F0E5AB /* FeedbackViewController.swift in Sources */,
