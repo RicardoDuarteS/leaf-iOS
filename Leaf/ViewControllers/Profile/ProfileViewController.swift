@@ -29,6 +29,7 @@ class ProfileViewController: UIViewController {
     var appManager = AppManager()
     
     var userData: [String:Any] = [:]
+    var user = [User]()
     
     
     
@@ -163,6 +164,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             cell.lblUsername.text = self.userData["name"] as? String
             //user profile picture
             if let profileImageUrl = userData["profile_image"] {
+                cell.imgProfilePicture.loadImageUsingCacheWithURLString(profileImageUrl as! String)
                 
             }
             

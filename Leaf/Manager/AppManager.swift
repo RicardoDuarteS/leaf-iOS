@@ -46,4 +46,24 @@ class AppManager {
             toastLabel.removeFromSuperview()
         })
     }
+    
+    //Alerts
+    func displayAlertWithOneOption(title: String?, message: String?, view: UIViewController?){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+            print("Alert clicked OK")
+        }))
+        view?.present(alert, animated: true, completion: nil)
+    }
+    
+    func displayAlertWithTwoOption(title: String, message: String?, view: UIViewController? ){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+            print("Alert clicked OK")
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (alert) in
+            print("Alert clicked Cancel")
+        }))
+        view?.present(alert, animated: true, completion: nil)
+    }
 }

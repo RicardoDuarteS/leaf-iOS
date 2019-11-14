@@ -7,19 +7,25 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class UserListViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
     
-    
     let appManager = AppManager()
+    var lostItemArray = [String]()
+    var itemFoundArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         registerNib()
+        fetchLostItemsData()
+        fetchFoundItemsData()
     }
     
     func registerNib(){
@@ -28,6 +34,34 @@ class UserListViewController: UIViewController {
         
         self.tableview.dataSource = self
         self.tableview.delegate = self
+    }
+    
+    func fetchLostItemsData(){
+
+        let reference = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        reference.child("users/\(userID!)/lost_item").observe(.value) { (snapshot) in
+            guard let dictionary = snapshot.value as? [String: AnyObject] else {return}
+            for item in dictionary{
+                let itemName = item.value["itemName"]as! String
+                self.lostItemArray.append(itemName)
+                self.tableview.reloadData()
+            }            
+        }
+    }
+    
+    func fetchFoundItemsData(){
+
+        let reference = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        reference.child("users/\(userID!)/found_items").observe(.value) { (snapshot) in
+            guard let dictionary = snapshot.value as? [String: AnyObject] else {return}
+            for item in dictionary{
+                let itemName = item.value["itemName"]as! String
+                self.itemFoundArray.append(itemName)
+                self.tableview.reloadData()
+            }
+        }
     }
 
 }
@@ -48,25 +82,30 @@ extension UserListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return appManager.randomImages.count
+            return self.itemFoundArray.count
         }else{
-            return appManager.randomImages.count
+            return self.lostItemArray.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0{
+            let currentItem = itemFoundArray[indexPath.row]
+
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserListTableViewCell", for: indexPath) as? UserListTableViewCell else { return UITableViewCell()}
             
-            cell.lblItemName.text = appManager.filterOptions[indexPath.row]
-            cell.lblPostStatus.text = "Finished"
-            cell.lblPostStatus.textColor = UIColor.red
+            cell.lblItemName.text = currentItem
+            cell.lblPostStatus.isHidden = true
+//            cell.lblPostStatus.textColor = UIColor.red
             return cell
+            
         }else{
+            let currentItem = lostItemArray[indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserListTableViewCell", for: indexPath) as? UserListTableViewCell else { return UITableViewCell()}
-            cell.lblItemName.text = appManager.filterOptions[indexPath.row]
-            cell.lblPostStatus.text = "Searching"
+            cell.lblItemName.text = currentItem
+            cell.lblPostStatus.isHidden = true
+//            text = "Searching"
             cell.lblPostStatus.textColor = UIColor.green
             return cell
         }

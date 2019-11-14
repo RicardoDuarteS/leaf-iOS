@@ -20,9 +20,11 @@
 		0D003B372341C87100F0E5AB /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D003B362341C87100F0E5AB /* FeedbackViewController.swift */; };
 		0D14E3FB22AC29F40073FD4E /* AddLostOrFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14E3FA22AC29F40073FD4E /* AddLostOrFoundViewController.swift */; };
 		0D160697234AD527000DA16C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D160696234AD527000DA16C /* User.swift */; };
-		0D16069A234E5A33000DA16C /* Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D160699234E5A33000DA16C /* Handlers.swift */; };
 		0D16069C234E65E4000DA16C /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D16069B234E65E4000DA16C /* CameraHandler.swift */; };
-		0D16069F234F9973000DA16C /* HandleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D16069E234F9973000DA16C /* HandleApi.swift */; };
+		0D1CDBE92357B3EB00518A9B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1CDBE82357B3EB00518A9B /* Extensions.swift */; };
+		0D1CDBEB2357D8C300518A9B /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1CDBEA2357D8C300518A9B /* ApiManager.swift */; };
+		0D1CDBED2357E48200518A9B /* LostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1CDBEC2357E48200518A9B /* LostItem.swift */; };
+		0D1CDBEF2357E56A00518A9B /* FoundItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1CDBEE2357E56A00518A9B /* FoundItems.swift */; };
 		0D31B24C2346779400EA8C38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D31B24B2346779400EA8C38 /* GoogleService-Info.plist */; };
 		0D3CCD34233DBEAB0085ED6B /* LostItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CCD33233DBEAB0085ED6B /* LostItemViewController.swift */; };
 		0D9CE43B233BC6CA00DC2235 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9CE43A233BC6CA00DC2235 /* LoginViewController.swift */; };
@@ -79,9 +81,11 @@
 		0D003B362341C87100F0E5AB /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		0D14E3FA22AC29F40073FD4E /* AddLostOrFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLostOrFoundViewController.swift; sourceTree = "<group>"; };
 		0D160696234AD527000DA16C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		0D160699234E5A33000DA16C /* Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handlers.swift; sourceTree = "<group>"; };
 		0D16069B234E65E4000DA16C /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
-		0D16069E234F9973000DA16C /* HandleApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleApi.swift; sourceTree = "<group>"; };
+		0D1CDBE82357B3EB00518A9B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0D1CDBEA2357D8C300518A9B /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		0D1CDBEC2357E48200518A9B /* LostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostItem.swift; sourceTree = "<group>"; };
+		0D1CDBEE2357E56A00518A9B /* FoundItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundItems.swift; sourceTree = "<group>"; };
 		0D31B24B2346779400EA8C38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D3CCD33233DBEAB0085ED6B /* LostItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostItemViewController.swift; sourceTree = "<group>"; };
 		0D9CE43A233BC6CA00DC2235 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -169,7 +173,6 @@
 		0D160698234E5A13000DA16C /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
-				0D160699234E5A33000DA16C /* Handlers.swift */,
 				0D16069B234E65E4000DA16C /* CameraHandler.swift */,
 			);
 			path = Handlers;
@@ -179,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				0D160696234AD527000DA16C /* User.swift */,
+				0D1CDBEC2357E48200518A9B /* LostItem.swift */,
+				0D1CDBEE2357E56A00518A9B /* FoundItems.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				0D16069D234F98BD000DA16C /* Model */,
-				0D16069E234F9973000DA16C /* HandleApi.swift */,
+				0D1CDBEA2357D8C300518A9B /* ApiManager.swift */,
 			);
 			path = DatabaseComunication;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 				0DB7786622A4BC02001985C8 /* AppDelegate.swift */,
 				0DFC0A3822B2B4B100DA5A28 /* AppManager.swift */,
 				0DB7787222A4BC05001985C8 /* LaunchScreen.storyboard */,
+				0D1CDBE82357B3EB00518A9B /* Extensions.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -554,15 +560,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D1CDBEB2357D8C300518A9B /* ApiManager.swift in Sources */,
 				0D003B342340379B00F0E5AB /* UserListTableViewCell.swift in Sources */,
 				0DB7787E22A4BFDF001985C8 /* MainViewController.swift in Sources */,
 				0DB7789722A6C3AE001985C8 /* ProfileTableViewCell.swift in Sources */,
 				0D003B25233DC3F300F0E5AB /* FoundItemsViewController.swift in Sources */,
 				0DB7786F22A4BC02001985C8 /* Leaf.xcdatamodeld in Sources */,
 				0D160697234AD527000DA16C /* User.swift in Sources */,
-				0D16069A234E5A33000DA16C /* Handlers.swift in Sources */,
 				0DB7789F22A8BCB8001985C8 /* ProfileUserDetailsTableViewCell.swift in Sources */,
 				0DB778A722A8E52F001985C8 /* LostTableViewCell.swift in Sources */,
+				0D1CDBEF2357E56A00518A9B /* FoundItems.swift in Sources */,
 				0DB6D00B22CE898000864368 /* ChatTableViewCell.swift in Sources */,
 				0D9CE43E233BC6E200DC2235 /* SignUpViewController.swift in Sources */,
 				0D3CCD34233DBEAB0085ED6B /* LostItemViewController.swift in Sources */,
@@ -573,17 +580,18 @@
 				0DB7789222A6C2C3001985C8 /* ProfileViewController.swift in Sources */,
 				0DB7788C22A6A632001985C8 /* ProductsViewController.swift in Sources */,
 				0DB6D00E22CE899500864368 /* ChstViewController.swift in Sources */,
+				0D1CDBE92357B3EB00518A9B /* Extensions.swift in Sources */,
 				0D16069C234E65E4000DA16C /* CameraHandler.swift in Sources */,
 				0DB7788922A4C994001985C8 /* MainCollectionViewCell.swift in Sources */,
 				0D003B312340346E00F0E5AB /* UserListViewController.swift in Sources */,
 				0D003B2E233DD62700F0E5AB /* FilterBarCollectionViewCell.swift in Sources */,
 				0DB6D00322CE7F2600864368 /* ChatListViewController.swift in Sources */,
-				0D16069F234F9973000DA16C /* HandleApi.swift in Sources */,
 				0D003B22233DC29100F0E5AB /* FoundItemsTableViewCell.swift in Sources */,
 				0D14E3FB22AC29F40073FD4E /* AddLostOrFoundViewController.swift in Sources */,
 				0D003B372341C87100F0E5AB /* FeedbackViewController.swift in Sources */,
 				0DB6D00622CE7F3E00864368 /* ChatListTableViewCell.swift in Sources */,
 				0DDF4C43230466D700A565B3 /* SelectedItemViewController.swift in Sources */,
+				0D1CDBED2357E48200518A9B /* LostItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

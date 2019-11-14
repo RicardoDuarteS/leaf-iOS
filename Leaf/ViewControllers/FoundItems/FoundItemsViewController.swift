@@ -24,7 +24,7 @@ class FoundItemsViewController: UIViewController {
     @IBOutlet weak var filterBarCollectionView: UICollectionView!
     
     let appManager = AppManager()
-    
+    var itemFoundArray = [FoundItem]()
     var lostOrFoundSelector = 0
         
         override func viewDidLoad() {
@@ -33,13 +33,14 @@ class FoundItemsViewController: UIViewController {
             self.navigationController?.isToolbarHidden = true
 
             registerNib()
+            fetchItemFoundData()
+            
         }
         
         override func viewWillAppear(_ animated: Bool) {
             self.searchConstraint.constant = 0
-//            if Auth.auth().currentUser?.uid == nil {
-//                self.handleLogout()
-//            }
+            self.collectionView.reloadData()
+            
         }
         
         func registerNib(){
@@ -62,6 +63,28 @@ class FoundItemsViewController: UIViewController {
             self.filterBarCollectionView.dataSource = self
             
         }
+    
+    func fetchItemFoundData(){
+
+        let reference = Database.database().reference()
+        reference.child("found_items").observe(.value) { (snapshot) in
+            
+            if let result = snapshot.children.allObjects as? [DataSnapshot] {
+                for child in result {
+                    let itemID = child.key as String
+                    
+                    reference.child("found_items/\(itemID)").observe(.value) { (dataSnapshow) in
+                        guard let dictionary = dataSnapshow.value as? [String: AnyObject] else {return}
+                        
+                        let itemFound = FoundItem.init(dictionary: dictionary)
+                        self.itemFoundArray.append(itemFound)
+                        self.collectionView.reloadData()
+                    }
+                    
+                }
+            }
+        }
+    }
     
     func handleLogout(){
         //logout from the server
@@ -99,7 +122,7 @@ class FoundItemsViewController: UIViewController {
 extension FoundItemsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
-            return appManager.randomImages.count
+            return itemFoundArray.count
         }else{
             return appManager.filterOptions.count - 1
         }
@@ -109,11 +132,16 @@ extension FoundItemsViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == self.collectionView {
+            let currentItem = itemFoundArray[indexPath.row]
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LostItemCollectionViewCell", for: indexPath) as? LostItemCollectionViewCell else {return UICollectionViewCell()}
+            
+            if let profileImageUrl = currentItem.itemImageUrl {
+                cell.imgItemPhoto.loadImageUsingCacheWithURLString(profileImageUrl as! String)
                 
-            cell.imgItemPhoto.image = UIImage(named: "\(appManager.randomImages[indexPath.row])")
-            cell.lblItemName.text = "\(appManager.randomImages[indexPath.row])"
-            cell.lblLocation.text = "Calgary, AB"
+            }
+            
+            cell.lblItemName.text = currentItem.itemName
+            cell.lblLocation.text = currentItem.location
             cell.lblReward.isHidden = true
             cell.lblRewardValue.isHidden = true
 
@@ -127,9 +155,10 @@ extension FoundItemsViewController: UICollectionViewDataSource, UICollectionView
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "selectedItemFromFoundItemSegue", sender: self)
     }
+
 }
 
 

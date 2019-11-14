@@ -20,7 +20,7 @@ class User: NSObject {
         self.username = dictionary["username"] as? String ?? ""
         self.email = dictionary["email"] as? String ?? ""
         self.phone = dictionary["phone"] as? String ?? ""
-        self.profileImageUrl = dictionary["profileImageUrl"] as? String ?? ""
+        self.profileImageUrl = dictionary["profile_image"] as? String ?? ""
     }
     
 }

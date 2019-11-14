@@ -18,6 +18,8 @@ class SelectedItemViewController: UIViewController {
     @IBOutlet weak var txvMessage: UIView!
 
     var lostOrFoundSelector: Int!
+    var lostItemSelected = [LostItem]()
+    var itemFoundSelected = [FoundItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,13 @@ class SelectedItemViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.imgItemPhoto.loadImageUsingCacheWithURLString(lostItemSelected[0].itemImageUrl ?? "")
+        self.lblItemName.text = lostItemSelected[0].itemName
+        self.txvItemDescription.text = lostItemSelected[0].itemDescription
+        
+        
+        
         self.tabBarController?.tabBar.isHidden = false
         
         if self.lostOrFoundSelector == 0{

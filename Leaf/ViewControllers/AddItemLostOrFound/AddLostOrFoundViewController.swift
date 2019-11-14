@@ -7,21 +7,29 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class AddLostOrFoundViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    
+        
     //Outlets
-    @IBOutlet weak var txfLostItemCategory: UITextField!
+    @IBOutlet weak var txfLostItemName: UITextField!
     @IBOutlet weak var txfLostItemLocation: UITextField!
     @IBOutlet weak var imgItemPhoto: UIImageView!
-    @IBOutlet weak var pickerview: UIPickerView!
+    @IBOutlet weak var txfCategory: UITextField!
     @IBOutlet weak var btnAddImage: UIButton!
+    @IBOutlet weak var txvDescription: UITextView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    //Reward Pop up
+    @IBOutlet weak var rewardPopUpView: UIView!
+    @IBOutlet weak var txfReward: UITextField!
+    
     
     let imagePickerController = UIImagePickerController()
+    let pickerView = UIPickerView()
     var selected = "none"
+    var reward = Double()
     let appManager = AppManager()
+    let apiManager = ApiManager()
     let cameraHandler = CameraHandler()
     
     override func viewDidLoad() {
@@ -31,14 +39,13 @@ class AddLostOrFoundViewController: UIViewController, UIImagePickerControllerDel
         
         self.btnAddImage.layer.borderWidth = 2
         self.btnAddImage.layer.borderColor = UIColor(red: 70, green: 205, blue: 70, alpha: 1).cgColor
+        
+        self.txfCategory.inputView = self.pickerView
         self.imagePickerController.delegate = self
-        
-        
-        self.pickerview.dataSource = self
-        self.pickerview.delegate = self
+        self.pickerView.dataSource = self
+        self.pickerView.delegate = self
         
     }
-    
     
     //img picker controller
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -54,6 +61,50 @@ class AddLostOrFoundViewController: UIViewController, UIImagePickerControllerDel
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
+    func addLostItem(reward: String){
+        //unwrap textfields
+               guard let itemName = txfLostItemName.text, let category = txfCategory.text, let location = txfLostItemLocation.text, let description = txvDescription.text else {return}
+               //verify if the fields are empty
+               if itemName != "" && category != "", location != "" && description != "" {
+                   //Register new item
+                let userID = Auth.auth().currentUser?.uid
+                apiManager.addLostItem(userID: userID, itemName: txfLostItemName.text!, category: txfCategory.text!, location: txfLostItemLocation.text!, description: txvDescription.text!, reward: reward, itemPicture: imgItemPhoto!)
+               }else{
+                   let alert = UIAlertController(title: "Field empty?", message: "If you want to find your item you have to be sure all the fields are not empty", preferredStyle: .alert)
+                   alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+                       print("Cancel pressed")
+                   }))
+                   self.present(alert, animated: true, completion: nil)
+               }
+    }
+    
+    func addFoundItem(){
+        guard let itemName = txfLostItemName.text, let category = txfCategory.text, let location = txfLostItemLocation.text, let description = txvDescription.text else {return}
+        //verify if fields are empty
+        if itemName != "" && category != "" && location != "" && description != "" {
+            apiManager.addFoundItem(itemName: itemName, category: category, location: location, description: description, itemPicture: imgItemPhoto)
+        }else {
+            let alert = UIAlertController(title: "Field empty?", message: "If you want to find your item you have to be sure all the fields are not empty", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+                print("Cancel pressed")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func cleanActivity(){
+        txfCategory.text = ""
+        txfLostItemName.text = ""
+        txvDescription.text = ""
+        txfLostItemLocation.text = ""
+        imgItemPhoto.image = UIImage(named: "imageIcon")
+        AppManager().showToast(message: "\(selected) item posted successfully",view: view!)
+        self.view.reloadInputViews()
+        
+    }
+    
+    //Buttons
     
     @IBAction func btnAddImageClicked(_ sender: UIButton) {
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
@@ -100,23 +151,34 @@ class AddLostOrFoundViewController: UIViewController, UIImagePickerControllerDel
     }
     
     //Post Lost Item
-    @IBAction func btnPostLostItemClicked(_ sender: UIButton) {
-        
-        let alert = UIAlertController(title: "Reward?", message: "You can pay reward for people for finding your missing item if you want", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            //Add item to the API
-            
-            self.performSegue(withIdentifier: "userListSegue", sender: self)
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
-            
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
+    @IBAction func btnPostClicked(_ sender: UIButton) {
+        if self.selected == "Lost"{
+            self.rewardPopUpView.isHidden = false
+        }else{
+            self.addFoundItem()
+            self.cleanActivity()
+            performSegue(withIdentifier: "userListSegue", sender: self)
+        }
+    }
+    
+    //Reward Buttons
+    
+    @IBAction func btnAddRewardClicked(_ sender: UIButton) {
+        if txfReward.text != ""{
+            self.addLostItem(reward: txfReward.text ?? "")
+            self.cleanActivity()
+            performSegue(withIdentifier: "userListSegue", sender: self)
+        }else{
+            self.addLostItem(reward: "0.00")
+            self.cleanActivity()
+            performSegue(withIdentifier: "userListSegue", sender: self)
+        }
         
     }
+    
+    @IBAction func btnDontAddRewardClicked(_ sender: UIButton) {
+    }
+    
 
 }
 
@@ -136,7 +198,7 @@ extension AddLostOrFoundViewController: UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //do something
-        
+        self.txfCategory.text = appManager.filterOptions[row]
     }
     
     

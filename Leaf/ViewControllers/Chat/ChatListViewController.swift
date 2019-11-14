@@ -83,6 +83,10 @@ extension ChatListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.lblUserName.text = currentUser.username
         cell.lblChatPreview.text = currentUser.email
         
+        if let profileImageUrl = currentUser.profileImageUrl {
+            cell.imgUserImage.loadImageUsingCacheWithURLString(profileImageUrl)
+        }
+        
         return cell
     }
     //send data to chat view
